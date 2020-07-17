@@ -5,21 +5,51 @@ public class Main {
     public static void main(String[] args) {
        System.out.println("Pocetak");
        
-       int x = 5;
-       Car auto1 = new Car();
+      
+       Car audi8 = new Car();
        
-       auto1.model = "Audi";
-       auto1.buildYear = 2003;
-       auto1.ccm = 2000;
+       audi8.printAttributes();
        
-       System.out.println("Model automobila 1 je: " + auto1.model);
+       audi8.setModel("Audi broj 8");
+       audi8.setBuildYear(2003);
+       audi8.setCcm(2000);
+              
+       audi8.printAttributes();
        
-       int y = 29;
-       Car auto2 = new Car();
-       auto2.model = "Fiat";
-       auto2.buildYear = 2019;
+       Car fiatPunto = new Car();
+       fiatPunto.setModel("Fiat");
+       fiatPunto.setBuildYear(2019);
        
-       System.out.println("Model automobila 2 je: " + auto2.model);
+       System.out.println("Model automobila 2 je: " + fiatPunto.getModel());
+       
+       fiatPunto.printAttributes();
+       
+       Car lada = new Car("Lada Niva", 1990, "green", 120, 50);
+       
+       lada.printAttributes();
+       
+       Car opel = new Car("Opel", 2002, "Blue", 200, 1300, 7, 150000);
+       opel.printAttributes();
+       
+       //prvo putovanje
+       opel.setMaxFuel(100);
+       opel.setFuel(20);
+       opel.setConsumption(10);
+       
+       opel.fuelUp(29);
+       opel.fuelUp(21);
+       
+       opel.goToTravel(300);
+       opel.printAttributes();
+       
+       //drugo putovanje
+       opel.goToTravel(50);
+       opel.printAttributes();
+    
+      //trece putovanje
+      opel.fuelUp(200);
+      opel.goToTravel(500);
+      opel.printAttributes();
     }
     
 }
